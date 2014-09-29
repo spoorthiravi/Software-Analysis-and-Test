@@ -1,0 +1,13 @@
+joeq.Allocator
+joeq.Class
+joeq.ClassLib
+joeq.ClassLib.Common
+joeq.Compiler
+joeq.Compiler.BytecodeAnalysis
+joeq.Compiler.Dataflow
+joeq.Compiler.Quad
+joeq.Compiler.Quad.SSA
+joeq.Main
+joeq.Memory
+joeq.Runtime
+joeq.UTF

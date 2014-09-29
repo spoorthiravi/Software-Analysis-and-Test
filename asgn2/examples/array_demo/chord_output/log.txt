@@ -1,0 +1,21 @@
+Chord run initiated at: Sep 29, 2014 9:55:18 AM
+ENTER: reachdef at Mon Sep 29 09:55:19 EDT 2014
+********** reachdef analysis *********
+ENTER: RTA
+Iteration: 0
+Iteration: 1
+Iteration: 2
+Iteration: 3
+Iteration: 4
+LEAVE: RTA
+Time: 00:00:08:748 hh:mm:ss:ms
+1
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: -2
+	at java.util.ArrayList.get(ArrayList.java:324)
+	at ReachDefAnalysis.doAnalysis(ReachDefAnalysis.java:103)
+	at DataflowAnalysis.run(DataflowAnalysis.java:23)
+	at chord.project.ClassicProject.runTask(ClassicProject.java:393)
+	at chord.project.ClassicProject.runTask(ClassicProject.java:414)
+	at chord.project.ClassicProject.run(ClassicProject.java:107)
+	at chord.project.Main.run(Main.java:78)
+	at chord.project.Main.main(Main.java:50)
