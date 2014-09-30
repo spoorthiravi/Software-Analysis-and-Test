@@ -45,9 +45,14 @@ public class LivenessAnalysis extends DataflowAnalysis<Register> {
 		HashMap<BasicBlock, ArrayList<QuadMetadata>> workListMap = new HashMap<BasicBlock, ArrayList<QuadMetadata>>();
 		boolean updated = true;
 		int count = 0;
-		while (count < 50) {
-			for (BasicBlock b : cfg.postOrderOnReverseGraph(root)) {
+		while (count < 500) {
+			for (BasicBlock b : cfg.reversePostOrderOnReverseGraph()) {
 				ArrayList<QuadMetadata> workListMapValues = new ArrayList<QuadMetadata>(); 
+				if(!b.isEntry()){
+					for(BasicBlock successor : b.getSuccessors()){
+						System.out.println("numOFsuccessors , successor = " + b.getNumberOfSuccessors() + "," + successor.getID());
+					}
+				}
 				for (int i = b.size()-1; i >= 0; i--) {
 					Quad q = b.getQuad(i);
 					QuadMetadata quadMeta = new QuadMetadata(q);
@@ -72,6 +77,14 @@ public class LivenessAnalysis extends DataflowAnalysis<Register> {
 					} else if (!b.isEntry() && i == b.size()-1) {
 						ArrayList<BasicBlock> successorsList = (ArrayList<BasicBlock>) b.getSuccessors();
 						for (BasicBlock successor : successorsList) {
+							if(successorsList.size() == 1 && successor.getQuads().size() == 0 && successorsList.get(0).isEntry()){
+								quadMeta.outSet = new HashSet<Register>();
+								break;
+							}
+							if(successor.getQuads().size() == 0){
+								quadMeta.outSet = new HashSet<Register>();
+								break;
+							}
 							if(workListMap.containsKey(successor)){
 							ArrayList<QuadMetadata> workListValues = workListMap.get(successor);
 							quadMeta.outSet.addAll((workListValues.get(workListValues.size() - 1)).inSet);
@@ -80,7 +93,7 @@ public class LivenessAnalysis extends DataflowAnalysis<Register> {
 							}
 						}
 					} else {
-						if (linkedQuadMetaMap2.containsKey(q)) {
+						if (!linkedQuadMetaMap2.isEmpty()){
 							int size2 = quadMetaList2.size();
 							quadMeta.outSet.addAll(quadMetaList2.get(size2 - 1).inSet);
 						} else {
@@ -92,8 +105,9 @@ public class LivenessAnalysis extends DataflowAnalysis<Register> {
 
 					// calculate inSet for each quad
 					HashSet<Register> dupOutSet = quadMeta.outSet;
-					for (Register register : quadMeta.killedSet)
+					for (Register register : quadMeta.killedSet){
 						dupOutSet.remove(register);
+					}
 					dupOutSet.addAll(quadMeta.genSet);
 					quadMeta.inSet = dupOutSet;
 					
@@ -115,16 +129,17 @@ public class LivenessAnalysis extends DataflowAnalysis<Register> {
 				}else{
 					workListMap.put(b, workListMapValues);
 				}
+				
+				System.out.println("workListMapValues Size = " + workListMapValues.size());
+				System.out.println("WorkListMap Size = " + workListMap.size());
 
 			}
 			boolean flag = true;
 			for (Entry<Quad, QuadMetadata> entry : linkedQuadMetaMap1.entrySet()) {
 				Quad quad = entry.getKey();
 				if (linkedQuadMetaMap2.containsKey(quad)) {
-					if (((entry.getValue().inSet).equals(linkedQuadMetaMap2
-							.get(quad).inSet))
-							&& ((entry.getValue().outSet)
-									.equals(linkedQuadMetaMap2.get(quad).outSet))) {
+					if (((entry.getValue().inSet).equals(linkedQuadMetaMap2.get(quad).inSet))
+							&& ((entry.getValue().outSet).equals(linkedQuadMetaMap2.get(quad).outSet))) {
 						flag = flag && true;
 					} else {
 						flag = false;
@@ -132,7 +147,7 @@ public class LivenessAnalysis extends DataflowAnalysis<Register> {
 				}
 				flag = false;
 			}
-			if (count == 49) {
+			if (count == 499) {
 				updated = false;
 				for (QuadMetadata quadMeta : quadMetaList1) {
 					inMap.put(quadMeta.quad, quadMeta.inSet);
@@ -144,9 +159,11 @@ public class LivenessAnalysis extends DataflowAnalysis<Register> {
 			} else {
 				quadMetaList1 = (ArrayList<QuadMetadata>) quadMetaList2.clone();
 				quadMetaList2 = new ArrayList<QuadMetadata>();
-				linkedQuadMetaMap1 = new LinkedHashMap<Quad, QuadMetadata>(linkedQuadMetaMap2);
+				linkedQuadMetaMap1 = new LinkedHashMap<Quad, QuadMetadata>(
+						linkedQuadMetaMap2);
 				linkedQuadMetaMap2 = new LinkedHashMap<Quad, QuadMetadata>();
 			}
+			
 			count++;
 
 		}
