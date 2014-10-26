@@ -1,11 +1,9 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-
 import chord.project.analyses.JavaAnalysis;
 import chord.project.Chord;
 import chord.program.Program;
-
 import joeq.Class.jq_Method;
 import joeq.Compiler.Quad.ControlFlowGraph;
 import joeq.Compiler.Quad.BasicBlock;

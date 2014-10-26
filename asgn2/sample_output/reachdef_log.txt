@@ -78,9 +78,7 @@ Register factory: Registers: 9
 16!main:([Ljava/lang/String;)V@ArrayDemo (ArrayDemo.java:7) [46: ASTORE_I R3, R2, R3]
 	IN :<1: NEWARRAY T1, IConst: 10, int[], T1> <47: ADD_I R3, R3, IConst: 1, R3> <29: ARRAYLENGTH T5, R2, T5> <3: MOVE_I R3, IConst: 0, R3> <2: MOVE_A R2, T1, R2> 
 	OUT:<1: NEWARRAY T1, IConst: 10, int[], T1> <47: ADD_I R3, R3, IConst: 1, R3> <29: ARRAYLENGTH T5, R2, T5> <3: MOVE_I R3, IConst: 0, R3> <2: MOVE_A R2, T1, R2> 
-43!main:([Ljava/lang/String;)V@ArrayDemo (ArrayDemo.java:12) [35: ALOAD_I T8, R2, R3]
-	IN :<35: ALOAD_I T8, R2, R3, T8> <41: ADD_I R3, R3, IConst: 1, R3> <49: MOVE_I R3, IConst: 0, R3> <32: NEW T6, java.lang.StringBuilder, T6> <33: MOVE_A T7, T6, T7> <2: MOVE_A R2, T1, R2> <27: ARRAYLENGTH T5, R2, T5> <31: GETSTATIC_A T1, .out, T1> 
-	OUT:<35: ALOAD_I T8, R2, R3, T8> <41: ADD_I R3, R3, IConst: 1, R3> <49: MOVE_I R3, IConst: 0, R3> <32: NEW T6, java.lang.StringBuilder, T6> <33: MOVE_A T7, T6, T7> <2: MOVE_A R2, T1, R2> <27: ARRAYLENGTH T5, R2, T5> <31: GETSTATIC_A T1, .out, T1> 
+43!main::wq
 52!main:([Ljava/lang/String;)V@ArrayDemo (ArrayDemo.java:12) [39: INVOKEVIRTUAL_A T6, toString:()Ljava/lang/String;@java.lang.StringBuilder, (T6)]
 	IN :<35: ALOAD_I T8, R2, R3, T8> <41: ADD_I R3, R3, IConst: 1, R3> <49: MOVE_I R3, IConst: 0, R3> <37: INVOKEVIRTUAL_A T6, append:(Ljava/lang/String;)Ljava/lang/StringBuilder;@java.lang.StringBuilder, (T6, T7), T6> <2: MOVE_A R2, T1, R2> <27: ARRAYLENGTH T5, R2, T5> <38: MOVE_A T7, AConst: " ", T7> <31: GETSTATIC_A T1, .out, T1> 
 	OUT:<35: ALOAD_I T8, R2, R3, T8> <41: ADD_I R3, R3, IConst: 1, R3> <49: MOVE_I R3, IConst: 0, R3> <2: MOVE_A R2, T1, R2> <39: INVOKEVIRTUAL_A T6, toString:()Ljava/lang/String;@java.lang.StringBuilder, (T6), T6> <38: MOVE_A T7, AConst: " ", T7> <27: ARRAYLENGTH T5, R2, T5> <31: GETSTATIC_A T1, .out, T1> 
