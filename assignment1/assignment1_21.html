@@ -1,0 +1,274 @@
+
+<!-- saved from url=(0030)http://rise4fun.com/Dafny/hZFS -->
+<html><script type="text/javascript" async="" src="./assignment1_21_files/ga.js"></script><script type="text/javascript">(function () {
+      return window.SIG_EXT = {};
+    })()</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Dafny @ rise4fun from Microsoft</title> 
+    <meta name="description" content="Dafny is a programming language with classes and datatypes, and specification constructs for describing intended behavior.  The Dafny verifier checks that programs live up to their specifications.">    
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <link rel="stylesheet" type="text/css" href="./assignment1_21_files/Site.min.css">
+    <!--Mobile --> 
+    <link rel="stylesheet" type="text/css" href="./assignment1_21_files/antiscreen.min.css" media="handheld, only screen and (max-device-width:480px)">	
+    <!--[if IEMobile 7]> 
+    <link rel="stylesheet" type="text/css" href="/Styles/antiscreen.min.css?hash=635429696227561371" media="screen"/>	
+    <![endif]-->
+    <script type="text/javascript" src="./assignment1_21_files/defaultearly.min.js"></script>
+    <script type="text/javascript" id="outputjs"></script>
+
+
+	        <link rel="stylesheet" type="text/css" media="screen" href="./assignment1_21_files/editor.main.css">
+            <link rel="stylesheet" type="text/css" media="screen" href="./assignment1_21_files/vs-theme.css">
+            <link rel="stylesheet" type="text/css" data-name="vs/editor/editor.main" href="./assignment1_21_files/editor.main(1).css"><link rel="stylesheet" type="text/css" media="screen" href="./assignment1_21_files/monarch.min.css">
+
+<style type="text/css"></style><script async="async" type="text/javascript" src="./assignment1_21_files/editor.main.js"></script><script async="async" type="text/javascript" src="./assignment1_21_files/editor.main.nls.js"></script></head>
+<body>
+<form name="form1" method="post" action="./assignment1_21_files/assignment1_21.html" id="form1">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTExODQ4MTQ0MjMPZBYCAgEPZBYGAgEPFgIeB1Zpc2libGVoZAICDxYCHglpbm5lcmh0bWwFHElzIHRoaXMgcHJvZ3JhbSBjb3JyZWN0JiM2MztkAgQPZBYCZg9kFgICAg8WAh8BBagCPGEgdGFyZ2V0PSdfYmxhbmsnIGhyZWY9J2h0dHA6Ly9yZXNlYXJjaC5taWNyb3NvZnQuY29tL2RhZm55JyBjbGFzcz0nbGFuZ2J1dHRvbic+aG9tZTwvYT4mbmJzcDs8YSBocmVmPScvRGFmbnkvdHV0b3JpYWwvZ3VpZGUnIGNsYXNzPSd0dXRidXR0b24nPnR1dG9yaWFsPC9hPiZuYnNwOzxhIHRhcmdldD0nX2JsYW5rJyBocmVmPSdodHRwczovL2NoYW5uZWw5Lm1zZG4uY29tL2Jsb2dzL3BlbGkvdGhlLXZlcmlmaWNhdGlvbi1jb3JuZXItbG9vcC10ZXJtaW5hdGlvbi8nIGNsYXNzPSdsYW5nYnV0dG9uJz52aWRlbzwvYT5kZCkh7uLYRD4hsnITDHZ7R3FLJ3bEjryTbWZ7z3awzsdr">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./assignment1_21_files/WebResource.axd" type="text/javascript"></script>
+
+
+<script src="./assignment1_21_files/ScriptResource.axd" type="text/javascript"></script>
+<script src="./assignment1_21_files/ScriptResource(1).axd" type="text/javascript"></script>
+<script src="./assignment1_21_files/ScriptResource(2).axd" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAATeNqHIMYtHdLbN3hqXWzPciUqGk7PHZIwzkZMFeoB+54Qg4g2/5ZRYMjHISx8Mj+rnbKqgkmmg59wLUHVEEhtGmo/YDroYlfU8GHew2X5PjPtDlO7zh/HYFIe7u98ZpY4=">
+</div>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', ['tAskUpdatePanel',''], [], [], 90, '');
+//]]>
+</script>
+
+    
+    <div class="splashsbox">
+        <div>
+            <a class="splashlink" href="http://research.microsoft.com/dafny"><span class="splashbigname">dafny</span></a>
+            <a href="http://research.microsoft.com/">
+              <img src="./assignment1_21_files/logo_msr_small.png" alt="Microsoft" class="logo">
+            </a>
+        </div>
+        <div class="msbox"><a class="splashlink" href="http://research.microsoft.com/">by Microsoft</a></div>
+        
+        <div>
+            <span id="ToolDescription" class="hint accent">Is this program correct?</span>
+        </div>
+     </div>
+     
+    <div class="newline">
+      <input type="hidden" name="SourceBox" id="SourceBox" value="method Main(){
+    var a:int := 0;
+    var b:int := -1;
+    var c:int := 0;
+    var i:int := 100;
+    while(a!=b)
+    invariant i == c &lt;==&gt; a == b;
+    invariant b &lt; a &lt;==&gt; c &lt; i;
+    invariant 0 &lt;= c; 
+    invariant 0 &lt;= a-b &lt;= 1;
+    decreases i - c;
+    decreases -1*b;
+    {
+         b := a;
+         c := c+1;
+         if(c &lt; i){
+             a := a+1;
+         }
+    }
+    print &quot;Eureka&quot;;
+}
+">
+      <div id="EditorBox" style="height:400px;"><div class="monaco-editor mac vs" style="width: 1414px; height: 400px;"><div class="overflow-guard" style="width: 1414px; height: 400px;"><div class="view-overlays" role="presentation" aria-hidden="true" style="position: absolute;"><div class="background" style="width: 1414px; height: 400px; top: 0px;"></div><div class="static"><div class="current-line" style="width: 1369px; height: 18px; left: 45px; top: 0px;"></div></div><div class="dynamic"><div class="lines-decorations" style="left:35px;width:10px;height:400px;"></div><div class="line-numbers" style="left:0px;width:35px;height:400px;"><div class="clnr" style="top:0px;">1</div><div class="clnr" style="top:18px;">2</div><div class="clnr" style="top:36px;">3</div><div class="clnr" style="top:54px;">4</div><div class="clnr" style="top:72px;">5</div><div class="clnr" style="top:90px;">6</div><div class="clnr" style="top:108px;">7</div><div class="clnr" style="top:126px;">8</div><div class="clnr" style="top:144px;">9</div><div class="clnr" style="top:162px;">10</div><div class="clnr" style="top:180px;">11</div><div class="clnr" style="top:198px;">12</div><div class="clnr" style="top:216px;">13</div><div class="clnr" style="top:234px;">14</div><div class="clnr" style="top:252px;">15</div><div class="clnr" style="top:270px;">16</div><div class="clnr" style="top:288px;">17</div><div class="clnr" style="top:306px;">18</div><div class="clnr" style="top:324px;">19</div><div class="clnr" style="top:342px;">20</div><div class="clnr" style="top:360px;">21</div><div class="clnr" style="top:378px;">22</div></div><div class="selections-layer" style="left:45px;width:1369px;height:400px;"></div><div class="decorations-layer" style="left:45px;width:1369px;height:400px;"></div></div></div><div class="monaco-scrollable-element editor-scrollable vs mac" aria-hidden="true" role="presentation" style="position: absolute; overflow: hidden; left: 45px; width: 1369px; height: 400px;"><div class="lines-content" style="overflow: hidden; width: 1369px; height: 400px;"><div class="view-zones" role="presentation" aria-hidden="true" style="position: absolute;"></div><div class="view-lines" role="presentation" aria-hidden="true" style="position: absolute; width: 1000000px; height: 1000000px; top: 0px;"><div linenumber="1" style="top:0px;height:18px;" class="view-line"><span><span class="token keyword dafny">method</span><span class="token white dafny"> </span><span class="token identifier dafny">Main</span><span class="token delimiter parenthesis dafny">(</span><span class="token delimiter parenthesis dafny">)</span><span class="token delimiter curly dafny">{</span></span></div><div linenumber="2" style="top:0px;height:18px;" class="view-line"><span><span class="token white dafny">    </span><span class="token keyword dafny">var</span><span class="token white dafny"> </span><span class="token identifier dafny">a</span><span class="token source dafny">:</span><span class="token type keyword dafny">int</span><span class="token white dafny"> </span><span class="token keyword dafny">:=</span><span class="token white dafny"> </span><span class="token number dafny">0</span><span class="token delimiter dafny">;</span></span></div><div linenumber="3" style="top:0px;height:18px;" class="view-line"><span><span class="token white dafny">    </span><span class="token keyword dafny">var</span><span class="token white dafny"> </span><span class="token identifier dafny">b</span><span class="token source dafny">:</span><span class="token type keyword dafny">int</span><span class="token white dafny"> </span><span class="token keyword dafny">:=</span><span class="token white dafny"> </span><span class="token source dafny">-</span><span class="token number dafny">1</span><span class="token delimiter dafny">;</span></span></div><div linenumber="4" style="top:0px;height:18px;" class="view-line"><span><span class="token white dafny">    </span><span class="token keyword dafny">var</span><span class="token white dafny"> </span><span class="token identifier dafny">c</span><span class="token source dafny">:</span><span class="token type keyword dafny">int</span><span class="token white dafny"> </span><span class="token keyword dafny">:=</span><span class="token white dafny"> </span><span class="token number dafny">0</span><span class="token delimiter dafny">;</span></span></div><div linenumber="5" style="top:0px;height:18px;" class="view-line"><span><span class="token white dafny">    </span><span class="token keyword dafny">var</span><span class="token white dafny"> </span><span class="token identifier dafny">i</span><span class="token source dafny">:</span><span class="token type keyword dafny">int</span><span class="token white dafny"> </span><span class="token keyword dafny">:=</span><span class="token white dafny"> </span><span class="token number dafny">100</span><span class="token delimiter dafny">;</span></span></div><div linenumber="6" style="top:0px;height:18px;" class="view-line"><span><span class="token white dafny">    </span><span class="token keyword dafny">while</span><span class="token delimiter parenthesis dafny">(</span><span class="token identifier dafny">a</span><span class="token source dafny">!=</span><span class="token identifier dafny">b</span><span class="token delimiter parenthesis dafny">)</span></span></div><div linenumber="7" style="top:0px;height:18px;" class="view-line"><span><span class="token white dafny">    </span><span class="token constructor identifier dafny">invariant</span><span class="token white dafny"> </span><span class="token identifier dafny">i</span><span class="token white dafny"> </span><span class="token source dafny">==</span><span class="token white dafny"> </span><span class="token identifier dafny">c</span><span class="token white dafny"> </span><span class="token source dafny">&lt;==&gt;</span><span class="token white dafny"> </span><span class="token identifier dafny">a</span><span class="token white dafny"> </span><span class="token source dafny">==</span><span class="token white dafny"> </span><span class="token identifier dafny">b</span><span class="token delimiter dafny">;</span></span></div><div linenumber="8" style="top:0px;height:18px;" class="view-line"><span><span class="token white dafny">    </span><span class="token constructor identifier dafny">invariant</span><span class="token white dafny"> </span><span class="token identifier dafny">b</span><span class="token white dafny"> </span><span class="token source dafny">&lt;</span><span class="token white dafny"> </span><span class="token identifier dafny">a</span><span class="token white dafny"> </span><span class="token source dafny">&lt;==&gt;</span><span class="token white dafny"> </span><span class="token identifier dafny">c</span><span class="token white dafny"> </span><span class="token source dafny">&lt;</span><span class="token white dafny"> </span><span class="token identifier dafny">i</span><span class="token delimiter dafny">;</span></span></div><div linenumber="9" style="top:0px;height:18px;" class="view-line"><span><span class="token white dafny">    </span><span class="token constructor identifier dafny">invariant</span><span class="token white dafny"> </span><span class="token number dafny">0</span><span class="token white dafny"> </span><span class="token source dafny">&lt;=</span><span class="token white dafny"> </span><span class="token identifier dafny">c</span><span class="token delimiter dafny">;</span><span class="token white dafny"> </span></span></div><div linenumber="10" style="top:0px;height:18px;" class="view-line"><span><span class="token white dafny">    </span><span class="token constructor identifier dafny">invariant</span><span class="token white dafny"> </span><span class="token number dafny">0</span><span class="token white dafny"> </span><span class="token source dafny">&lt;=</span><span class="token white dafny"> </span><span class="token identifier dafny">a</span><span class="token source dafny">-</span><span class="token identifier dafny">b</span><span class="token white dafny"> </span><span class="token source dafny">&lt;=</span><span class="token white dafny"> </span><span class="token number dafny">1</span><span class="token delimiter dafny">;</span></span></div><div linenumber="11" style="top:0px;height:18px;" class="view-line"><span><span class="token white dafny">    </span><span class="token constructor identifier dafny">decreases</span><span class="token white dafny"> </span><span class="token identifier dafny">i</span><span class="token white dafny"> </span><span class="token source dafny">-</span><span class="token white dafny"> </span><span class="token identifier dafny">c</span><span class="token delimiter dafny">;</span></span></div><div linenumber="12" style="top:0px;height:18px;" class="view-line"><span><span class="token white dafny">    </span><span class="token constructor identifier dafny">decreases</span><span class="token white dafny"> </span><span class="token source dafny">-</span><span class="token number dafny">1</span><span class="token source dafny">*</span><span class="token identifier dafny">b</span><span class="token delimiter dafny">;</span></span></div><div linenumber="13" style="top:0px;height:18px;" class="view-line"><span><span class="token white dafny">    </span><span class="token delimiter curly dafny">{</span></span></div><div linenumber="14" style="top:0px;height:18px;" class="view-line"><span><span class="token white dafny">         </span><span class="token identifier dafny">b</span><span class="token white dafny"> </span><span class="token keyword dafny">:=</span><span class="token white dafny"> </span><span class="token identifier dafny">a</span><span class="token delimiter dafny">;</span></span></div><div linenumber="15" style="top:0px;height:18px;" class="view-line"><span><span class="token white dafny">         </span><span class="token identifier dafny">c</span><span class="token white dafny"> </span><span class="token keyword dafny">:=</span><span class="token white dafny"> </span><span class="token identifier dafny">c</span><span class="token source dafny">+</span><span class="token number dafny">1</span><span class="token delimiter dafny">;</span></span></div><div linenumber="16" style="top:0px;height:18px;" class="view-line"><span><span class="token white dafny">         </span><span class="token keyword dafny">if</span><span class="token delimiter parenthesis dafny">(</span><span class="token identifier dafny">c</span><span class="token white dafny"> </span><span class="token source dafny">&lt;</span><span class="token white dafny"> </span><span class="token identifier dafny">i</span><span class="token delimiter parenthesis dafny">)</span><span class="token delimiter curly dafny">{</span></span></div><div linenumber="17" style="top:0px;height:18px;" class="view-line"><span><span class="token white dafny">             </span><span class="token identifier dafny">a</span><span class="token white dafny"> </span><span class="token keyword dafny">:=</span><span class="token white dafny"> </span><span class="token identifier dafny">a</span><span class="token source dafny">+</span><span class="token number dafny">1</span><span class="token delimiter dafny">;</span></span></div><div linenumber="18" style="top:0px;height:18px;" class="view-line"><span><span class="token white dafny">         </span><span class="token delimiter curly dafny">}</span></span></div><div linenumber="19" style="top:0px;height:18px;" class="view-line"><span><span class="token white dafny">    </span><span class="token delimiter curly dafny">}</span></span></div><div linenumber="20" style="top:0px;height:18px;" class="view-line"><span><span class="token white dafny">    </span><span class="token keyword dafny">print</span><span class="token white dafny"> </span><span class="token string dafny">"Eureka"</span><span class="token delimiter dafny">;</span></span></div><div linenumber="21" style="top:0px;height:18px;" class="view-line"><span><span class="token delimiter curly dafny">}</span></span></div><div linenumber="22" style="top:0px;height:18px;" class="view-line"><span><span>&nbsp;</span></span></div><div></div></div><div class="contentWidgets"><div class="monaco-editor-hover monaco-editor-background" widgetid="editor.contrib.modesContentHoverWidget" style="display: none; position: absolute; max-width: 1369px; top: -1000px;"><div style="display: inline-block;"></div></div><div class="editor-widget parameter-hints-widget hidden" widgetid="editor.widget.parameterHintsWidget" style="position: absolute; max-width: 1369px; top: -1000px;"><div class="wrapper monaco-editor-background"><div class="buttons"><div class="button previous"></div><div class="button next"></div></div><div class="overloads"></div><div class="signatures"></div></div></div><div class="editor-widget quick-suggest-widget" widgetid="editor.contrib.quickSuggestWidget" style="position: absolute; max-width: 1369px; top: -1000px;"></div><div class="editor-widget suggest-widget monaco-editor-background" widgetid="editor.widget.suggestWidget" style="width: 440px; height: 247px; position: absolute; max-width: 1369px; top: -1000px; visibility: hidden;"><div class="monaco-vtree focused" tabindex="0"><div class="monaco-scrollable-element  mac" aria-hidden="true" role="presentation" style="position: relative; overflow: hidden;"><div class="monaco-vtree-wrapper" style="overflow: hidden;"><div class="rows"><div class="row fake"><div class="content"></div></div></div></div><div class="invisible scrollbar horizontal" style="display: none; position: absolute; width: 430px; height: 10px; left: 0px; bottom: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 10px; width: 430px;"></div></div><div class="invisible scrollbar vertical" style="display: none; position: absolute; width: 10px; height: 237px; right: 0px; top: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 10px; height: 237px;"></div></div><div class="shadow"></div><div class="shadow"></div><div class="shadow top-left-corner"></div></div></div></div></div><div class="cursors-layer"><div class="cursor" role="presentation" aria-hidden="true" linenumber="1" column="1" style="height: 18px; top: 0px; left: 0px; display: none;"></div></div></div><div class="invisible scrollbar horizontal" style="display: none; position: absolute; width: 1355px; height: 10px; left: 0px; bottom: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 10px; width: 1355px;"></div></div><canvas class="decorationsOverviewRuler" width="14" height="390" style="position: absolute; top: 0px; right: 0px;"></canvas><div class="invisible scrollbar vertical" style="display: none; position: absolute; width: 14px; height: 390px; right: 0px; top: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 14px; height: 390px;"></div></div></div><div class="overlayWidgets" style="width: 1414px;"><div class="editor-widget find-widget can-replace" aria-hidden="false" widgetid="editor.contrib.findWidget" style="position: absolute;"><div title="Toggle Replace mode" tabindex="0" class="button toggle left collapse" role="button" aria-label="Toggle Replace mode" aria-expanded="false"></div><div class="find-part"><div class="monaco-findInput" style="width: 221px;"><div class="monaco-inputbox idle"><div class="wrapper"><input class="input" type="text" wrap="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="Find" placeholder="Find" style="width: 155px;"></div></div><div class="controls"><div title="Match case" class="custom-checkbox case-sensitive unchecked" aria-checked="false" aria-label="Match case" tabindex="0" role="checkbox"></div><div title="Match whole word" class="custom-checkbox whole-word unchecked" aria-checked="false" aria-label="Match whole word" tabindex="0" role="checkbox"></div><div title="Use regular expression" class="custom-checkbox regex unchecked" aria-checked="false" aria-label="Use regular expression" tabindex="0" role="checkbox"></div></div></div><div title="Previous match (Shift+F3)" tabindex="0" class="button previous" role="button" aria-label="Previous match (Shift+F3)"></div><div title="Next match (F3)" tabindex="0" class="button next" role="button" aria-label="Next match (F3)"></div><div class="monaco-checkbox" title="Find in selection"><input type="checkbox" class="checkbox" id="checkbox-0"><label class="label" for="checkbox-0"></label></div><div title="Close (Escape)" tabindex="0" class="button close" role="button" aria-label="Close (Escape)"></div></div><div class="replace-part"><div class="replace-input" style="width: 221px;"><div class="monaco-inputbox idle"><div class="wrapper"><input class="input" type="text" wrap="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="Replace" placeholder="Replace" disabled="true"></div></div></div><div title="Replace" tabindex="0" class="button replace" role="button" aria-label="Replace"></div><div title="Replace All" tabindex="0" class="button replace-all" role="button" aria-label="Replace All"></div></div></div><div class="monaco-editor-hover monaco-editor-background" aria-hidden="true" role="presentation" widgetid="editor.contrib.modesGlyphHoverWidget" style="display: none; position: absolute;"></div></div><textarea class="inputarea" wrap="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="Editor content" role="textbox" aria-multiline="true" style="top: 0px; left: 0px; font-size: 12px; line-height: 18px;"></textarea><div class="line-numbers textAreaCover" style="position: absolute; width: 1px; height: 1px; top: 0px; left: 0px;"></div></div><div class="context-view hidden" aria-hidden="true"></div></div></div>
+    </div>
+    <div id="AskUpdatePanel">
+	
+    <div class="newline">
+        <div class="editor"></div>
+        <span id="Timer" style="visibility:hidden;display:none;"></span>
+        <input type="submit" name="AskButton" value="►" onclick="startAsk();" id="AskButton" accesskey="B" class="bigbutton">
+        
+        &nbsp;<span id="ToolDescriptionMenu" class="hintMenu"><a target="_blank" href="http://research.microsoft.com/dafny" class="langbutton">home</a>&nbsp;<a href="http://rise4fun.com/Dafny/tutorial/guide" class="tutbutton">tutorial</a>&nbsp;<a target="_blank" href="https://channel9.msdn.com/blogs/peli/the-verification-corner-loop-termination/" class="langbutton">video</a></span>
+        <a onclick="updateEditorSource();" id="Permalink" title="Click to create a Permalink URL for this program. Then you can bookmark it, or share it with other people." class="langbutton" href="javascript:__doPostBack('Permalink','')">permalink</a>
+        
+        <span class="spinner" id="spinner"></span>
+    </div>
+    <div class="shortcuthint">'►' shortcut: Alt+B</div>
+    <div class="newline">
+      <div id="OutputBox" class="hidden"></div>
+    </div>
+    
+</div>
+    
+    <div class="newline topmargin">
+        <div class="samplesbox">
+            <div>samples</div>
+            
+                <div><a class="splashlink" href="http://rise4fun.com/Dafny/Hello">Hello</a></div>
+            
+                <div><a class="splashlink" href="http://rise4fun.com/Dafny/Fibonacci">Fibonacci</a></div>
+            
+                <div><a class="splashlink" href="http://rise4fun.com/Dafny/CountToN">CountToN</a></div>
+            
+                <div><a class="splashlink" href="http://rise4fun.com/Dafny/Ackermann">Ackermann</a></div>
+            
+                <div><a class="splashlink" href="http://rise4fun.com/Dafny/Mul">Mul</a></div>
+            
+                <div><a class="splashlink" href="http://rise4fun.com/Dafny/zb">zb</a></div>
+            
+                <div><a class="splashlink" href="http://rise4fun.com/Dafny/Cube">Cube</a></div>
+            
+                <div><a class="splashlink" href="http://rise4fun.com/Dafny/z">z</a></div>
+            
+                <div><a class="splashlink" href="http://rise4fun.com/Dafny/CountToAndReturnN">CountToAndReturnN</a></div>
+            
+                <div><a class="splashlink" href="http://rise4fun.com/Dafny/Problem1-SumMax">Problem1-SumMax</a></div>
+            
+                <div><a class="splashlink" href="http://rise4fun.com/Dafny/Add">Add</a></div>
+            
+        </div>  
+        <div>about Dafny - A language and program verifier for functional correctness</div>
+        <div class="splashhint">Dafny is a programming language with classes and datatypes, and specification constructs for describing intended behavior.  The Dafny verifier checks that programs live up to their specifications.</div>
+        <div id="social" href="http://rise4fun.com/Dafny" style="margin: 8px 8px 8px 8px;"></div>
+    </div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.UI._Timer, {"enabled":false,"interval":60000,"uniqueID":"Timer"}, null, null, $get("Timer"));
+});
+//]]>
+</script>
+</form>
+    
+    <div id="links" class="links">
+       <a class="link" href="http://rise4fun.com/">tools</a>
+       &nbsp;&nbsp;
+       <a class="link" href="http://rise4fun.com/dev">developer</a>
+       &nbsp;&nbsp;
+       <a class="link" href="http://rise4fun.com/about">about</a>
+    </div>
+        
+    <div class="copy">
+        rise4fun © 2014 Microsoft Corporation
+         - <a target="_blank" href="http://rise4fun.com/termsofuse">terms of use</a> - <a target="_blank" href="http://rise4fun.com/privacy">privacy &amp; cookies</a> - <a target="blank" href="http://research.microsoft.com/CodeOfConduct">code of conduct</a>
+    </div>
+    <script type="text/javascript">
+_currentToolName = 'Dafny';
+    </script>
+    <script type="text/javascript" src="./assignment1_21_files/defaultlate.min.js"></script>
+
+        <script type="text/javascript" src="./assignment1_21_files/loader.js"></script>
+        <script type="text/javascript" src="./assignment1_21_files/editor2early.js"></script>
+
+    <script type="text/javascript">
+    var lang = 
+{
+  displayName: 'Dafny',
+  name:        'dafny',
+  mimeTypes:   ['text/x-dafny'],
+    
+  lineComments:      '//',
+  blockCommentStart: '/*',
+  blockCommentEnd:   '*/',
+
+  keywords: [
+    'class','datatype','codatatype','type','iterator',
+    'function','predicate','copredicate',
+    'ghost','var','method','lemma','constructor','colemma',
+    'abstract','module','import','default','as','opened','static','refines',
+    'returns','yields','include',
+    'assert','assume', 'break','then','else','if','label','return','yield',
+    'while','print','where',
+    'old','forall','exists','new','calc','modify','in','this','fresh',
+    'match','case','false','true','null'
+  ],
+  
+  verifyKeywords: [
+    'requires','ensures','modifies','reads','free','invariant','decreases',
+  ],
+  
+  types: [
+    'bool','multiset','map','nat','int','real','object','set','seq','array','array2','array3'
+  ],
+  
+  brackets: [
+    ['{','}','delimiter.curly'],  
+    ['[',']','delimiter.square'],  
+    ['(',')','delimiter.parenthesis'] 
+  ],
+  autoClosingPairs: [['"','"'],['@brackets']],
+  escapes: '\\\\(?:[abfnrtv\\\\"\']|x[0-9A-Fa-f]{1,4}|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8})',
+
+  tokenizer: {
+    root: [
+      ['array([2-9]\\d*|1\\d+)', 'type.keyword' ],
+      ['[a-zA-Z\'_\\?\\\\][\\w\'\\?\\\\]*', { cases: {'@keywords': 'keyword',
+                                             '@verifyKeywords': 'constructor.identifier',
+                                             '@types'   : 'type.keyword',
+                                             '@default' : 'identifier' }}],            
+      [':=','keyword'],
+      { include: '@whitespace' },
+      
+      ['[{}()\\[\\]]', '@brackets'],
+      ['[;,]', 'delimiter'],
+      ['[0-9]+', 'number'],
+      ['"([^"\\\\]|\\\\.)*$', 'string.invalid' ],  
+      ['"',  'string', '@string' ],
+    ],
+
+    whitespace: [
+      ['[ \\t\\r\\n]+', 'white'],
+      ['\\/\\*',       'comment', '@comment' ],
+      ['\\/\\/.*$',    'comment'],
+    ],
+
+    comment: [
+      ['[^\\/*]+', 'comment' ],
+      ['\\/\\*', 'comment', '@push' ],    
+      ["\\*/",    'comment', '@pop'  ],
+      ['[\\/*]',   'comment' ]
+    ],  
+
+    string: [
+      ['[^\\\\"]+',  'string'],
+      ['@escapes', 'string.escape'],
+      ['\\\\.',      'string.escape.invalid'],
+      ['"',        'string', '@pop' ]
+    ],
+  }
+}
+;
+     loadEditor(
+        'text/x-dafny',
+         lang,
+         false);
+    </script>
+
+    <script type="text/javascript" src="./assignment1_21_files/social.js"></script>
+
+    <script type="text/javascript" src="./assignment1_21_files/analytics.js"></script>
+
+</body></html>

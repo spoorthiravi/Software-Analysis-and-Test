@@ -1,0 +1,61 @@
+# name=modref-dlog
+
+.include "M.dom"
+.include "H.dom"
+.include "F.dom"
+.include "I.dom"
+.include "V.dom"
+
+.bddvarorder I0xM0_V0xV1_H0_F0_H1
+
+###
+# Relations
+###
+
+# use only these input relations
+
+#Contains (m,v,f) s.t. method (m) contains (v=f), where (f) is static pointer
+MgetInstFldInst(m:M0,l:V0,b:V1,f:F0) input
+
+#Contains (m,v,f) s.t. method (m) contains (b.f=v) where (f) is static pointer
+MputInstFldInst(m:M0,b:V0,f:F0,r:V1) input
+
+#Contains (m,v,f,b) s.t. (m) contains (v=b.f) where (f) is pointer/arrayelement
+MgetStatFldInst(m:M0,l:V0,f:F0) input
+
+# Contains (m,b,v,f) s.t. (m) contains (b.f=v) where f is pointer/arrayelement
+MputStatFldInst(m:M0,f:F0,r:V0) input
+
+# Contains (v,h) s.t. variable V points to allocation site H
+VH(v:V0,h:H0) input
+
+# Contains (m,i) s.t method m contains a quad i.
+MI(m:M0,i:I0) input
+
+# Contains (i,m) s.t quad i invokes another method m.
+IM(i:I0,m:M0) input
+
+# Contains all methods (m) which are reachable
+reachableM(m:M0) input
+
+# TODO: declare any intermediate relations you might need
+methodReachable(m:M0,n:M1)
+
+# use only these output relations
+refStatField(m:M0,f:F0) output
+modStatField(m:M0,f:F0) output
+refInstField(m:M0,h:H0,f:F0) output
+modInstField(m:M0,h:H0,f:F0) output
+
+###
+# Constraints
+###
+
+# TODO: write constraints to compute above output relations
+methodReachable(m,n) :- MI(m,i),IM(i,n).
+modStatField(m,f) :- MputStatFldInst(m,f,_), reachableM(m).
+refStatField(m,f) :- MgetStatFldInst(m,_,f), reachableM(m). 
+refStatField(m,f) :- MgetStatFldInst(n,_,f), methodReachable(m,n), reachableM(m), reachableM(n).
+modInstField(m,h,f) :- reachableM(m), MputInstFldInst(m,v,f,_), VH(v,h).
+refInstField(m,h,f) :- reachableM(m), MgetInstFldInst(m,_,v,f), VH(v,h).
+refInstField(m,h,f) :- MgetInstFldInst(n,_,v,f), VH(v,h), methodReachable(m,n), reachableM(m), reachableM(n).

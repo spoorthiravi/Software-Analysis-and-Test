@@ -1,0 +1,52 @@
+# name=escape-dlog
+
+.include "M.dom"
+.include "H.dom"
+.include "F.dom"
+.include "V.dom"
+.include "Z.dom"
+
+.bddvarorder M0_V0xV1_H0_F0_H1_Z0
+
+###
+# Relations
+###
+
+# use only these input relations
+MmethArg(m:M0,n:Z0,v:V0) input
+MmethRet(m:M0,n:Z0,v:V1) input
+MH(m:M0,h:H0) input
+VH(v:V0,h:H0) input
+FH(f:F0,h:H0) input
+HFH(h:H0,f:F0,h2:H1) input
+reachableM(m:M0) input
+
+
+# TODO: declare any intermediate relations you might need
+mayReach(m1:M0,m2:M1)
+reachableFromStaticFeild(m:M0,h:H0)
+reachableFromArgOfMethod(m:M0,h:H0)
+reachableFromReturn(m:M0,h:H0)
+recursiveHFH(h1:H0,h2:H1)
+
+# use only these output relations
+localMH(m:M0,h:H0) output
+
+###
+# Constraints
+###
+
+# TODO: write constraints to compute above output relation
+mayReach(m1, m2) :- mayReach(m1, m), mayReach(m, m2).
+recursiveHFH(h1,h2) :- HFH(h1,_,h2).
+recursiveHFH(h1,h2) :- recursiveHFH(h1,h3),recursiveHFH(h3,h2).
+reachableFromStaticFeild(m,h) :- reachableM(m), FH(_,h), MH(m,h).
+reachableFromStaticFeild(m,h) :- recursiveHFH(h,h2), reachableFromStaticFeild(m,h2). 
+reachableFromReturn(m,h) :- reachableM(m), MmethRet(m,_,v), VH(v,h).
+reachableFromReturn(m,h) :- recursiveHFH(h1,h), reachableFromReturn(m,h1).
+reachableFromArgOfMethod(m,h) :- reachableM(m), MmethArg(m,_,v), VH(v,h).
+reachableFromArgOfMethod(m,h) :- recursiveHFH(h1,h), reachableFromArgOfMethod(m,h1).
+
+localMH(m,h) :- reachableM(m),  MH(m,h), !reachableFromStaticFeild(m,h), !reachableFromReturn(m,h), !reachableFromArgOfMethod(m,h).
+
+
